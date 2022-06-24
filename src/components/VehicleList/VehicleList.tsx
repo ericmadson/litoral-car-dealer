@@ -1,6 +1,6 @@
 import { HStack, Flex, Text, Image, VStack } from "@chakra-ui/react";
 import { bar, car } from "../../assets";
-import { CustomButtonVehicles } from "../CustomButtomVehicles";
+import { CustomButtonVehicles } from "../CustomButtonVehicles";
 
 export function VehicleList() {
   return (
