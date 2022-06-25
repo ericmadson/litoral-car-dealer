@@ -12,11 +12,11 @@ export function Warning() {
         <Image src={bar} w="370px" h="3px"></Image>
       </HStack>
       <Flex mt="16px" maxW="460px" flexDir="column">
-        <Text color="white" fontWeight="400" fontSize="16px">
+        <Text color="#B5B5B5" fontWeight="400" fontSize="16px">
           Quando você testa seu veículo, você é teleportado a uma dimensão
           alternativa. Isso significa que ninguém pode te incomodar ou te matar.
         </Text>
-        <Text color="white" fontWeight="400" fontSize="16px">
+        <Text color="#B5B5B5" fontWeight="400" fontSize="16px">
           Se você quer parar o test drive, basta sair do seu veículo no momento
           do test drive.
         </Text>

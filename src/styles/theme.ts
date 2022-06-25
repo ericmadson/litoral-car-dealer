@@ -2,12 +2,13 @@ import { extendTheme } from "@chakra-ui/react";
 
 export const theme = extendTheme({
   fonts: {
-    body: "Montserrat",
+    heading: "Sf-Regular",
+    body: "Sf-Regular",
   },
   styles: {
     global: {
       "html, body": {
-        background: "#fff",
+        background: "#000",
         overflowX: "hidden",
         overflowY: "hidden",
       },

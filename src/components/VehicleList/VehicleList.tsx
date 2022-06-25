@@ -1,8 +1,14 @@
-import { HStack, Flex, Text, Image, VStack } from "@chakra-ui/react";
+import { HStack, Flex, Text, Image, VStack, Spinner } from "@chakra-ui/react";
+import { Vehicle } from "../../App";
 import { bar, car } from "../../assets";
 import { CustomButtonVehicles } from "../CustomButtonVehicles";
 
-export function VehicleList() {
+interface VehicleListProps {
+  vehicles: Vehicle[];
+  isLoading?: boolean;
+}
+
+export function VehicleList({ vehicles, isLoading }: VehicleListProps) {
   return (
     <>
       <HStack align="center" spacing={2} mt="40px" mb="10px">
@@ -12,48 +18,26 @@ export function VehicleList() {
         </Text>
         <Image src={bar} w="250px" h="3px"></Image>
       </HStack>
-      <Flex overflowY="scroll" h="560px" maxW="430px">
-        <VStack spacing={2}>
-          <CustomButtonVehicles
-            title="teste"
-            value="$1.000.000"
-          ></CustomButtonVehicles>
-          <CustomButtonVehicles
-            title="teste"
-            value="$1.000.000"
-          ></CustomButtonVehicles>
-          <CustomButtonVehicles
-            title="teste"
-            value="$1.000.000"
-          ></CustomButtonVehicles>
-          <CustomButtonVehicles
-            title="teste"
-            value="$1.000.000"
-          ></CustomButtonVehicles>
-          <CustomButtonVehicles
-            title="teste"
-            value="$1.000.000"
-          ></CustomButtonVehicles>
-          <CustomButtonVehicles
-            title="teste"
-            value="$1.000.000"
-          ></CustomButtonVehicles>
-          <CustomButtonVehicles
-            title="teste"
-            value="$1.000.000"
-          ></CustomButtonVehicles>
-          <CustomButtonVehicles
-            title="teste"
-            value="$1.000.000"
-          ></CustomButtonVehicles>
-          <CustomButtonVehicles
-            title="teste"
-            value="$1.000.000"
-          ></CustomButtonVehicles>
-          <CustomButtonVehicles
-            title="teste"
-            value="$1.000.000"
-          ></CustomButtonVehicles>
+      <Flex overflowY="scroll" h="560px" w="100%">
+        <VStack w="100%" h="100%" spacing={2}>
+          {isLoading ? (
+            <Spinner
+              color="#FFF"
+              margin="auto 0"
+              alignSelf="center"
+              justifySelf="center"
+            />
+          ) : (
+            <>
+              {vehicles.map((item) => (
+                <CustomButtonVehicles
+                  key={item.id}
+                  title={item.name}
+                  value={item.value}
+                />
+              ))}
+            </>
+          )}
         </VStack>
       </Flex>
     </>
